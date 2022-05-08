@@ -1,8 +1,13 @@
 # my-first-project
 my repository where my new works will be stored
 this is my job of pop programming with c ++
+
+
+
 #include <iostream>
+	
 #include <cstring>
+	
 #include <Windows.h>
 
 using namespace std;
@@ -10,24 +15,32 @@ using namespace std;
 struct elememSt
 {
 	char someData[15];
+	
 	elememSt* toNext;
 };
 
 elememSt* head, * myEl;
+	
 char newEl[15];
+	
 char oldEl[15];
 
 void push(char * addEl) 
 {
 	myEl = new elememSt;
+	
 	strcpy_s(myEl->someData, newEl);
+	
 	myEl->toNext = head;
+	
 	head = myEl;
+	
 	cout << "\nDone!\n";
 }
 
 void vvod(char * text) {
 	cout << "\tThis element was on top :";
+	
 	cout << head->someData << endl;
 }
 
@@ -36,10 +49,15 @@ void pop(char* showEl)
 	if (head != NULL)
 	{
 		myEl = head;
+	
 		strcpy_s(oldEl, head->someData);
+	
 		head = myEl->toNext;
+	
 		cout << "\tThis element was on top :";
+	
 		cout << myEl->someData << endl;
+	
 		delete myEl;
 	}
 	else
@@ -49,10 +67,15 @@ void pop(char* showEl)
 int main()
 {
 	head = NULL;
+	
 	char choice;
+	
 	cout << "\t*********************\n";
+	
 	cout << "\tLet's play with STAK\n";
+	
 	cout << "\t********************\n";
+	
 
 	do
 	{
